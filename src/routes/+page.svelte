@@ -11,7 +11,7 @@
 
 		<!-- ロゴを右上に重ねる -->
 		<div class="absolute top-3 right-3">
-			<img src={`${base}/images/logo.png`} alt="logo" class="h-8 w-auto" />
+			<img src={`${base}/images/logo.svg`} alt="logo" class="h-8 w-auto" />
 		</div>
 	</figure>
 
