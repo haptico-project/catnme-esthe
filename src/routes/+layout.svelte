@@ -1,26 +1,23 @@
-<script lang="ts">
-	import '../app.css';
-</script>
+<!-- +layout.svelte -->
+<div class="relative min-h-dvh font-sans text-ink">
+	<!-- 背景：画面に固定 -->
+	<div
+		class="fixed inset-0 -z-10 pointer-events-none
+           bg-[url('/images/bg.jpg')] bg-cover bg-center
+           blur-md brightness-90"
+	></div>
+	<!-- オーバーレイ（必要なら） -->
+	<div class="fixed inset-0 -z-10 bg-white/40 pointer-events-none"></div>
 
-<div class="max-w-[1440px] boxx">
-	<slot />
+	<!-- コンテンツ（普通にブラウザ標準スクロール） -->
+	<div class="mx-auto max-w-[1200px] md:px-6 grid md:grid-cols-[1fr_min(100%,theme(maxWidth.phone))_1fr]">
+		<aside class="hidden md:block"><slot name="left" /></aside>
+		<main class="w-full md:mx-auto md:max-w-phone"><slot /></main>
+		<aside class="hidden md:block"><slot name="right" /></aside>
+	</div>
 </div>
 
-<svelte:head>
 
-	<!-- Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-	<link
-		rel="stylesheet"
-		href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
-	/>
-
-	<!-- Material Typography -->
-	<link
-		rel="stylesheet"
-		href="https://unpkg.com/@material/typography@14.0.0/dist/mdc.typography.css"
-	/>
-
-	<!-- SMUI -->
-	<link rel="stylesheet" href="https://unpkg.com/svelte-material-ui/bare.css" />
-</svelte:head>
+<script lang="ts">
+	import '../app.css'; // ← これが無いと Tailwind は一切効きません
+</script>

@@ -1,22 +1,14 @@
-<script lang="ts">
-	import Button from '@smui/button';
-	import Card, { Content as CardContent } from '@smui/card';
+<section class="text-center">
 
-	let count = 0;
-</script>
+	<!-- ロゴなど（必要なら） -->
+	<div class="w-full flex justify-end p-3 md:p-0">
+		<!-- … -->
+	</div>
 
-<div class="mt-4">
-	<h1 class="text-3xl">bitboxx front template</h1>
+	<!-- メインビジュアル：フルブリード -->
+	<figure class="relative w-full h-[min(72vh,900px)] overflow-hidden">
+		<img src="/images/cat-main.png" alt="" class="absolute inset-0 w-full h-full object-cover" />
+	</figure>
 
-	<Button class="mt-2" variant="outlined" on:click={() => count++}>This is a button!</Button>
-
-	<Card class="mt-2">
-		<CardContent class="mdc-typography--body2">Count: {count}</CardContent>
-	</Card>
-</div>
-
-<style lang="postcss">
-	:global(html) {
-		background-color: theme(colors.white);
-	}
-</style>
+	<div class="h-10"></div>
+</section>

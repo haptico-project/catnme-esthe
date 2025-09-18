@@ -1,31 +1,20 @@
-/** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
-			colors: {
-				color1: '#004CA0',
-				color2: '#C0E4FF',
-				color3: '#B78F00',
-				textColor: '#0F0101',
-				linkColor: '#00B2FF',
-				backgroundColor: '#FFFFFF'
-			},
 			fontFamily: {
-				en: ['Spartan', 'sans-serif'],
-				jp: ['Noto Sans JP', 'sans-serif']
+				sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif']
 			},
-			fontSize: {
-				xs: '.75rem',
-				sm: '.875rem',
-				base: '1rem',
-				lg: '1.125rem',
-				xl: '1.25rem',
-				'2xl': '1.5rem',
-				'3xl': '1.875rem',
-				'4xl': '2.25rem',
-				'5xl': '3rem',
-				'6xl': '4rem'
+			colors: {
+				basebg: '#EBEBE8', // 全体背景
+				basegrad: '#FFFFFF', // グラデーション終点
+				ink: '#5E5E5E', // 文字色
+				relax: '#FF91C0', // 見出し・波線
+				relaxbg: '#FFF1F7', // 「猫と一緒にリラックス」背景
+				cta: '#FFDFED' // 購入ボタン
+			},
+			maxWidth: {
+				phone: '480px' // 中央“スマホ幅”（任意で390/414等へ）
 			}
 		}
 	},
