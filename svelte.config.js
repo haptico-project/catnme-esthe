@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
+const isProdPages = process.env.DEPLOY_TARGET === 'gh-pages';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
@@ -17,7 +19,7 @@ const config = {
 			strict: true
 		}),
 		paths: {
-			relative: true
+			base: isProdPages ? '/catnme-esthe' : ''
 		}
 		// paths: {
 		// 	base: process.argv.includes('dev') ? '' : process.env.BASE_PATH

@@ -7,8 +7,12 @@
 
 	<!-- メインビジュアル：フルブリード -->
 	<figure class="relative w-full h-[min(72vh,900px)] overflow-hidden">
-		<img src="/images/cat-main.png" alt="" class="absolute inset-0 w-full h-full object-cover" />
+		<img src={`${base}/images/cat-main.png`} alt="" class="absolute inset-0 w-full h-full object-cover" />
 	</figure>
 
 	<div class="h-10"></div>
 </section>
+
+<script>
+	import { base } from '$app/paths';
+</script>

@@ -2,9 +2,9 @@
 <div class="relative min-h-dvh font-sans text-ink">
 	<!-- 背景：画面に固定 -->
 	<div
-		class="fixed inset-0 -z-10 pointer-events-none
-           bg-[url('/images/bg.jpg')] bg-cover bg-center
-           blur-md brightness-90"
+		class={`fixed inset-0 -z-10 pointer-events-none
+           bg-[url('${base}/images/bg.jpg')] bg-cover bg-center
+           blur-md brightness-90`}
 	></div>
 	<!-- オーバーレイ（必要なら） -->
 	<div class="fixed inset-0 -z-10 bg-white/40 pointer-events-none"></div>
@@ -19,5 +19,6 @@
 
 
 <script lang="ts">
-	import '../app.css'; // ← これが無いと Tailwind は一切効きません
+	import '../app.css';
+	import { base } from '$app/paths';
 </script>
