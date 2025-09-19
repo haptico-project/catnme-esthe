@@ -21,7 +21,7 @@
 	</HeroBoard>
 
 	<!-- 購入ボタン（盤面内の%座標。端末が変わっても位置がブレない） -->
-	<div class="relative -mt-8 flex justify-center">
+	<div class="relative -mt-4 flex justify-center">
 		<ImageAt
 			class="pressable pressable-glow"
 			href="#"
