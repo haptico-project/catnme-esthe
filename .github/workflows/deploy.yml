@@ -36,8 +36,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build project
-        env:
-          DEPLOY_TARGET: gh-pages
+#        env:
+#          DEPLOY_TARGET: gh-pages
         run: yarn build
 
       - name: Add CNAME
