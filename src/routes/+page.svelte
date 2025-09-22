@@ -2,6 +2,31 @@
 	import { base } from '$app/paths';
 	import ImageAt from '../infras/ImageAt.svelte';
 	import HeroBoard from '../infras/HeroBoard.svelte';
+
+	const shops = [
+		{
+			name: "加賀スポーツ株式会社",
+			addr: "〒101-0023 東京都千代田区神田松永町20番地 加賀電子本社ビル 4F",
+			tel: "03-5657-0148",
+			mail: "t_ikeda@fyt.co.jp"
+		},
+		{
+			name: "株式会社ラピータ",
+			addr: "171-8569 東京都豊島区南池袋 株式会社 西武百貨店 池袋店",
+			tel: "03-6812-1717"
+		},
+		{
+			name: "アクティブAKIBA",
+			addr: "〒101-0028 東京都千代田区神田花岡町1-1 ヨドバシAKIBA9階",
+			tel: "03-5209-1701"
+		},
+		{
+			name: "株式会社ファセテラピー",
+			addr: "112-0002 東京都文京区小石川2-3-4 第一川田ビル2階",
+			tel: "03-3818-0408"
+		}
+	];
+
 </script>
 
 <section class="text-center relative">
@@ -33,7 +58,7 @@
 	</div>
 
 	<!-- 下部テキスト（ヒーローの下に続く） -->
-	<section class="relative px-6 py-8" style="margin-top: 6rem;">
+	<section class="relative px-6 pt-8" style="margin-top: 6rem;">
 		<div class="text-center text-ink">
 			「猫とわたしのエステ」は、<br />
 			熟練マッサージ師の手の動きを再現した振動器です。<br />
@@ -54,7 +79,85 @@
 			そんな、日常に小さな贅沢を添える<br />
 			新しいエステ体験をお楽しみください。<br />
 		</div>
+
+		<div class="text-center text-ink mx-4" style="margin-top: 6rem; margin-bottom: 6rem;">
+			<video class="mx-auto" controls autoplay loop muted playsinline>
+				<source src={`${base}/videos/catme-esthe.mp4`} type="video/mp4">
+				お使いのブラウザは動画再生に対応していません。
+			</video>
+		</div>
 	</section>
 
+	<!-- 下部テキスト（ヒーローの下に続く） -->
+	<section class="relative pt-8" style="margin-top: 2rem; background-color: #FFF0">
+
+		<div class="overflow-hidden">
+			<img src={`${base}/images/parts/section-div1.svg`} class="block w-full h-auto -mb-px" alt="section-div1"/>
+		</div>
+		<div style="background-color: #FFF1F7">
+
+			<div class="text-center text-ink pt-12 px-4" style="font-size: 17px;">
+				猫とわたしの、まったり癒しタイムを。<br/>
+				全身どこでも、好きな場所にお使いいただけます。
+				<img class="mt-4" src={`${base}/images/parts/under-wave.svg`} alt="under-wave"/>
+			</div>
+
+			<div class="text-left mt-12 mx-6 pb-12">
+				<div>◎ 一緒にヘッドスパ</div>
+				<div class="grid grid-cols-2 grid-rows-1 gap-4">
+					<div class="">
+						<img src={`${base}/images/section-case/いっしょにヘッドスパ_ねこ.png`} alt="section-div"/>
+					</div>
+					<div class="">
+						<img src={`${base}/images/section-case/いっしょにヘッドスパ_人.png`} alt="section-div"/>
+					</div>
+				</div>
+
+				<div class="mt-8">◎ 一緒に腸活</div>
+				<div class="grid grid-cols-2 grid-rows-1 gap-4">
+					<div class="">
+						<img src={`${base}/images/section-case/いっしょに腸活_人.png`} alt="section-div"/>
+					</div>
+					<div class="">
+						<img src={`${base}/images/section-case/いっしょに腸活_猫.png`} alt="section-div"/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<img src={`${base}/images/parts/section-div2.svg`} alt="section-div2"/>
+	</section>
+
+	<section class="relative px-6 pt-8" style="margin-top: 2rem;">
+		<div class="text-center text-ink" style="font-size: 24px;">
+			販売店舗
+			<img class="mt-4" src={`${base}/images/parts/simple-border.svg`} alt="border"/>
+		</div>
+
+		<div class="text-left mt-4 mx-6 pb-12">
+			<div class="grid grid-cols-2 gap-y-4 gap-x-8 text-left text-sm">
+				{#each shops as shop}
+					<div>
+						<p class="font-medium">{shop.name}</p>
+						<p>{shop.addr}</p>
+						{#if shop.tel}
+							<p>TEL: {shop.tel}</p>
+						{/if}
+						{#if shop.mail}
+							<p>{shop.mail}</p>
+						{/if}
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
 	<div class="h-10"></div>
+
+	<footer>
+		&copy; 2025 Facetherapie Inc.
+	</footer>
 </section>
+
+<style type="text/css">
+
+</style>
