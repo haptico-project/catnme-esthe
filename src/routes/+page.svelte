@@ -11,7 +11,7 @@
 			mail: "t_ikeda@fyt.co.jp"
 		},
 		{
-			name: "株式会社ラピータ",
+			name: "株式会社ラビータ",
 			addr: "171-8569 東京都豊島区南池袋 株式会社 西武百貨店 池袋店",
 			tel: "03-6812-1717"
 		},
@@ -29,13 +29,14 @@
 
 </script>
 
-<section class="text-center relative">
+<section class="text-center relative" style="background-color: #EBEBE8;">
 
 	<!-- 固定アスペクトの盤面にヒーロー画像とオーバーレイを重ねる -->
 	<HeroBoard src={`${base}/images/cat-main.png`} designW={428} designH={926}>
+
 		<!-- ロゴ（右上に重ねる） -->
 		<div class="absolute top-3 right-3">
-			<img src={`${base}/images/logo.svg`} alt="logo" class="h-8 w-auto" />
+			<img src={`${base}/images/logo.png`} alt="logo" class="h-8 w-[70px] h-[70px]" />
 		</div>
 
 		<!-- 見出し（盤面比で固定位置に） -->
@@ -88,8 +89,26 @@
 		</div>
 	</section>
 
-	<!-- 下部テキスト（ヒーローの下に続く） -->
+	<!-- LINE UP -->
 	<section class="relative pt-8" style="margin-top: 2rem; background-color: #FFF0">
+		<div class="overflow-hidden">
+			<img src={`${base}/images/parts/section-div3.svg`} class="block w-full h-auto -mb-px" alt="section-div1"/>
+		</div>
+		<div class="text-center text-ink" style="font-size: 24px; background-color: #FFF">
+			<div style="line-height: 1em;">
+				<span style="font-size: 28px;"><u>LINE UP</u></span><br/>
+				<span style="font-size: 14px;">ラインナップ</span>
+			</div>
+			<img class="p-8" src={`${base}/images/products/one.png`} alt="product"/>
+		</div>
+
+		<div class="text-left mt-4 mx-6 pb-4">
+
+		</div>
+	</section>
+
+	<!-- Usecase -->
+	<section class="relative" style="padding-top: 6rem; margin-top: -4rem; background-color: #FFF">
 
 		<div class="overflow-hidden">
 			<img src={`${base}/images/parts/section-div1.svg`} class="block w-full h-auto -mb-px" alt="section-div1"/>
@@ -125,16 +144,19 @@
 			</div>
 		</div>
 
-		<img src={`${base}/images/parts/section-div2.svg`} alt="section-div2"/>
+		<div style="background-color: #EBEBE8">
+			<img src={`${base}/images/parts/section-div2.svg`} alt="section-div2"/>
+		</div>
 	</section>
 
+	<!-- 販売店舗 -->
 	<section class="relative px-6 pt-8" style="margin-top: 2rem;">
 		<div class="text-center text-ink" style="font-size: 24px;">
 			販売店舗
 			<img class="mt-4" src={`${base}/images/parts/simple-border.svg`} alt="border"/>
 		</div>
 
-		<div class="text-left mt-4 mx-6 pb-12">
+		<div class="text-left mt-4 mx-6 pb-4">
 			<div class="grid grid-cols-2 gap-y-4 gap-x-8 text-left text-sm">
 				{#each shops as shop}
 					<div>
@@ -150,10 +172,13 @@
 				{/each}
 			</div>
 		</div>
+		<div class="text-center text-ink" style="font-size: 24px;">
+			<img  src={`${base}/images/parts/simple-border.svg`} alt="border"/>
+		</div>
 	</section>
 	<div class="h-10"></div>
 
-	<footer>
+	<footer style="margin-top: 10rem; padding-bottom: 1rem;">
 		&copy; 2025 Facetherapie Inc.
 	</footer>
 </section>
