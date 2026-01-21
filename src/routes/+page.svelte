@@ -1,188 +1,209 @@
 <script>
 	import { base } from '$app/paths';
-	import ImageAt from '../infras/ImageAt.svelte';
-	import HeroBoard from '../infras/HeroBoard.svelte';
-
-	const shops = [
-		{
-			name: "加賀スポーツ株式会社",
-			addr: "〒101-0023 東京都千代田区神田松永町20番地 加賀電子本社ビル 4F",
-			tel: "03-5657-0148",
-			mail: "t_ikeda@fyt.co.jp"
-		},
-		{
-			name: "株式会社ラビータ",
-			addr: "171-8569 東京都豊島区南池袋 株式会社 西武百貨店 池袋店",
-			tel: "03-6812-1717"
-		},
-		{
-			name: "アクティブAKIBA",
-			addr: "〒101-0028 東京都千代田区神田花岡町1-1 ヨドバシAKIBA9階",
-			tel: "03-5209-1701"
-		},
-		{
-			name: "株式会社ファセテラピー",
-			addr: "112-0002 東京都文京区小石川2-3-4 第一川田ビル2階",
-			tel: "03-3818-0408"
-		}
-	];
-
 </script>
 
-<section class="text-center relative" style="background-color: #EBEBE8;">
+<!-- 背景 -->
+<div class="w-full bg-basebg text-ink">
+	<!-- コンテンツ幅固定 -->
+	<main class="mx-auto max-w-phone px-4 pb-20">
 
-	<!-- 固定アスペクトの盤面にヒーロー画像とオーバーレイを重ねる -->
-	<HeroBoard src={`${base}/images/cat-main.png`} designW={428} designH={926}>
+		<!-- HERO / 画像1 -->
+		<section class="pt-10 text-center">
+			<img
+				src={`${base}/images/cat-main.png`}
+				alt="シニアペットケア"
+				class="mx-auto rounded-2xl mb-8"
+			/>
 
-		<!-- ロゴ（右上に重ねる） -->
-		<div class="absolute top-3 right-3">
-			<img src={`${base}/images/logo.png`} alt="logo" class="h-8 w-[70px] h-[70px]" />
-		</div>
+			<h1 class="text-2xl font-semibold mb-6">
+				シニアペットのケアが変わります
+			</h1>
 
-		<!-- 見出し（盤面比で固定位置に） -->
-		<div class="absolute right-1" style="top: 85%;">
-			<span class="-translate-x-1/2 text-[30px] font-bold">一緒に、エステ。</span>
-		</div>
+			<p class="leading-relaxed mb-6">
+				歩くのがゆっくりになった<br />
+				階段を嫌がるようになった<br />
+				夜にそわそわする時間が増えた
+			</p>
 
-	</HeroBoard>
+			<p class="text-sm">
+				そんな“変化”を感じたら。
+			</p>
+		</section>
 
-	<!-- 購入ボタン（盤面内の%座標。端末が変わっても位置がブレない） -->
-	<div class="relative -mt-4 flex justify-center">
-		<ImageAt
-			class="pressable pressable-glow"
-			href="#"
-			src={`${base}/images/shop-btn.svg`}
-			width="40%"
-			x={75}
-			y={95}
-		/>
-	</div>
+		<hr class="my-12 border-gray-300" />
 
-	<!-- 下部テキスト（ヒーローの下に続く） -->
-	<section class="relative px-6 pt-8" style="margin-top: 6rem;">
-		<div class="text-center text-ink">
-			「猫とわたしのエステ」は、<br />
-			熟練マッサージ師の手の動きを再現した振動器です。<br />
-			やわらかな振動が、<br />
-			心と体を静かにゆるめていきます。<br />
-			<br />
+		<!-- 仕組み -->
+		<section class="text-center">
+			<h2 class="text-lg font-semibold mb-4">
+				自然の音の微細振動※で、<br />
+				からだをやわらげるケア
+			</h2>
 
-			そして、<br />
-			この振動器のいちばんの魅力は<br />
-			猫と一緒に使えること。<br />
-			通常の振動モードにくわえて、<br />
-			猫の小さな体にもやさしい、穏やかなモードが選べます。<br />
-			<br />
-			猫がゴロゴロと喉を鳴らし、<br />
-			私も目を閉じて、夢の中へ...<br />
-			<br />
-			猫と一緒に、やさしく癒される。<br />
-			そんな、日常に小さな贅沢を添える<br />
-			新しいエステ体験をお楽しみください。<br />
-		</div>
-
-		<div class="text-center text-ink mx-4" style="margin-top: 6rem; margin-bottom: 6rem;">
-			<video class="mx-auto" controls autoplay loop muted playsinline>
-				<source src={`${base}/videos/catme-esthe.mp4`} type="video/mp4">
-				お使いのブラウザは動画再生に対応していません。
-			</video>
-		</div>
-	</section>
-
-	<!-- LINE UP -->
-	<section class="relative pt-8" style="margin-top: 2rem; background-color: #FFF0">
-		<div class="overflow-hidden">
-			<img src={`${base}/images/parts/section-div3.svg`} class="block w-full h-auto -mb-px" alt="section-div1"/>
-		</div>
-		<div class="text-center text-ink" style="font-size: 24px; background-color: #FFF">
-			<div style="line-height: 1em;">
-				<span style="font-size: 28px;"><u>LINE UP</u></span><br/>
-				<span style="font-size: 14px;">ラインナップ</span>
-			</div>
-			<img class="p-8" src={`${base}/images/products/one.png`} alt="product"/>
-		</div>
-
-		<div class="text-left mt-4 mx-6 pb-4">
-
-		</div>
-	</section>
-
-	<!-- Usecase -->
-	<section class="relative" style="padding-top: 6rem; margin-top: -4rem; background-color: #FFF">
-
-		<div class="overflow-hidden">
-			<img src={`${base}/images/parts/section-div1.svg`} class="block w-full h-auto -mb-px" alt="section-div1"/>
-		</div>
-		<div style="background-color: #FFF1F7">
-
-			<div class="text-center text-ink pt-12 px-4" style="font-size: 17px;">
-				猫とわたしの、まったり癒しタイムを。<br/>
-				全身どこでも、好きな場所にお使いいただけます。
-				<img class="mt-4" src={`${base}/images/parts/under-wave.svg`} alt="under-wave"/>
+			<div class="my-6">
+				<video
+					src={`${base}/videos/catme-esthe.mp4`}
+					controls
+					playsinline
+					class="w-full rounded-xl"
+				/>
 			</div>
 
-			<div class="text-left mt-12 mx-6 pb-12">
-				<div>◎ 一緒にヘッドスパ</div>
-				<div class="grid grid-cols-2 grid-rows-1 gap-4">
-					<div class="">
-						<img src={`${base}/images/section-case/いっしょにヘッドスパ_ねこ.png`} alt="section-div"/>
-					</div>
-					<div class="">
-						<img src={`${base}/images/section-case/いっしょにヘッドスパ_人.png`} alt="section-div"/>
-					</div>
-				</div>
+			<p class="text-xs text-gray-500 mb-6">
+				※スピーカーに触れると手に伝わる小さな“ふるえ”のこと
+			</p>
 
-				<div class="mt-8">◎ 一緒に腸活</div>
-				<div class="grid grid-cols-2 grid-rows-1 gap-4">
-					<div class="">
-						<img src={`${base}/images/section-case/いっしょに腸活_人.png`} alt="section-div"/>
-					</div>
-					<div class="">
-						<img src={`${base}/images/section-case/いっしょに腸活_猫.png`} alt="section-div"/>
-					</div>
-				</div>
-			</div>
-		</div>
+			<p class="text-left text-sm leading-relaxed">
+				ペットの<br />
+				・足腰のこわばり<br />
+				・緊張<br />
+				・不安<br />
+				・ぐったり感<br /><br />
+				に寄り添い、からだと気持ちを整える<br />
+				新しいウェルビーイングケアです。
+			</p>
+		</section>
 
-		<div style="background-color: #EBEBE8">
-			<img src={`${base}/images/parts/section-div2.svg`} alt="section-div2"/>
-		</div>
-	</section>
+		<hr class="my-12 border-gray-300" />
 
-	<!-- 販売店舗 -->
-	<section class="relative px-6 pt-8" style="margin-top: 2rem;">
-		<div class="text-center text-ink" style="font-size: 24px;">
-			販売店舗
-			<img class="mt-4" src={`${base}/images/parts/simple-border.svg`} alt="border"/>
-		</div>
+		<!-- 画像2 -->
+		<section class="text-center">
+			<img
+				src={`${base}/images/products/one.png`}
+				alt="やさしく当てるだけ"
+				class="mx-auto mb-8"
+			/>
 
-		<div class="text-left mt-4 mx-6 pb-4">
-			<div class="grid grid-cols-2 gap-y-4 gap-x-8 text-left text-sm">
-				{#each shops as shop}
-					<div>
-						<p class="font-medium">{shop.name}</p>
-						<p>{shop.addr}</p>
-						{#if shop.tel}
-							<p>TEL: {shop.tel}</p>
-						{/if}
-						{#if shop.mail}
-							<p>{shop.mail}</p>
-						{/if}
-					</div>
-				{/each}
-			</div>
-		</div>
-		<div class="text-center text-ink" style="font-size: 24px;">
-			<img  src={`${base}/images/parts/simple-border.svg`} alt="border"/>
-		</div>
-	</section>
-	<div class="h-10"></div>
+			<h2 class="text-xl font-semibold mb-4">
+				やさしく当てるだけ
+			</h2>
 
-	<footer style="margin-top: 10rem; padding-bottom: 1rem;">
-		&copy; 2025 Facetherapie Inc.
-	</footer>
-</section>
+			<p class="text-sm leading-relaxed">
+				痛みも強い刺激もありません。<br />
+				「気持ちよさそうにウトウトする」<br />
+				「帰ってからよく眠る」などのお声も増えています。
+			</p>
+		</section>
 
-<style type="text/css">
+		<hr class="my-12 border-gray-300" />
 
-</style>
+		<!-- 料金 -->
+		<section class="text-center">
+			<h2 class="text-xl font-semibold mb-4">
+				料金と使い方
+			</h2>
+
+			<p class="mb-4">月額：3,000円〜</p>
+
+			<p class="text-sm leading-loose">
+				使い方はとても簡単<br />
+				→ 気になる部分に<br />
+				→ スピーカーをそっと当てるだけ
+			</p>
+
+			<p class="text-sm mt-4">
+				続けるほど変化を感じやすいケアです。
+			</p>
+		</section>
+
+		<hr class="my-12 border-gray-300" />
+
+		<!-- おすすめ -->
+		<section>
+			<h2 class="text-xl font-semibold text-center mb-4">
+				こんな子におすすめ
+			</h2>
+
+			<ul class="text-sm leading-relaxed">
+				<li>・シニア期のワンちゃん・ネコちゃん</li>
+				<li>・足腰をかばう子</li>
+				<li>・眠りが浅くなってきた子</li>
+				<li>・震えやすい／緊張しやすい子</li>
+				<li>・介護の始まりを感じている子</li>
+			</ul>
+		</section>
+
+		<hr class="my-12 border-gray-300" />
+
+		<!-- 背景 -->
+		<section class="text-sm leading-relaxed">
+			<h2 class="text-xl font-semibold text-center mb-4">
+				“借りたい理由” が増えている背景
+			</h2>
+
+			<p class="mb-4">
+				高齢ペットのケアは「何をしてあげたらいいのかわからない」
+				という声が多数です。
+			</p>
+
+			<p class="mb-4">
+				とくに介護期は、動かさないことがかえって
+				筋力・睡眠・気持ちの低下につながることも。
+			</p>
+
+			<p>
+				✔ 自宅でできる<br />
+				✔ かんたん<br />
+				✔ 続けやすい
+			</p>
+		</section>
+
+		<hr class="my-12 border-gray-300" />
+
+		<!-- 獣医 -->
+		<section class="text-center">
+			<img
+				src={`${base}/images/section-case/いっしょにヘッドスパ_ねこ.png`}
+				alt="獣医コメント"
+				class="mx-auto mb-6 rounded-xl"
+			/>
+
+			<p class="text-sm leading-relaxed">
+				「シニア期になると、筋肉・関節だけでなく
+				睡眠とメンタルのケアも重要になります。
+				無理に動かさず、やさしい刺激で血流や緊張を整える方法は、
+				飼い主が自宅で実践できる点に価値があります」
+			</p>
+
+			<p class="text-xs mt-2">
+				（動物病院／獣医師）
+			</p>
+		</section>
+
+		<hr class="my-12 border-gray-300" />
+
+		<!-- Q&A -->
+		<section class="text-sm leading-relaxed">
+			<h2 class="text-xl font-semibold text-center mb-4">
+				Q&amp;A
+			</h2>
+
+			<p class="mb-4">
+				Q：何歳くらいから使うと良いですか？<br />
+				A：7〜10歳頃を境に、変化が出はじめる子が多いです。
+			</p>
+
+			<p class="mb-4">
+				Q：痛がったり怖がったりしませんか？<br />
+				A：刺激や音ではなく“小さなふるえ”なので、多くの子がリラックスします。
+			</p>
+
+			<p class="mb-4">
+				Q：薬や通院と併用できますか？<br />
+				A：併用できます。医療行為ではなく“生活ケア”です。
+			</p>
+		</section>
+
+		<hr class="my-12 border-gray-300" />
+
+		<!-- CTA -->
+		<section class="text-center">
+			<h2 class="text-xl font-semibold mb-4">
+				まずは試してみませんか？
+			</h2>
+			<p class="text-sm">
+				レンタル／ご自宅トライアルも可能です。
+			</p>
+		</section>
+
+	</main>
+</div>
