@@ -41,7 +41,7 @@ jobs:
         run: yarn build
 
       - name: Add CNAME
-        run: echo 'facetherapie.shop' > build/CNAME
+        run: echo 'https://xn--68jp0a0a6n2fteqew793e.com/' > build/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
