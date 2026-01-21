@@ -41,7 +41,7 @@ jobs:
         run: yarn build
 
       - name: Add CNAME
-        run: echo 'xn--68jp0a0a6n2fteqew793e.com' > build/CNAME
+        run: echo 'xn--9ckk6c261p4n7d.com' > build/CNAME
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
