@@ -1,22 +1,106 @@
 <script>
 	import { base } from '$app/paths';
+	import { page } from '$app/stores';
+	import CheckoutService from '$lib/infras/checkoutService';
+
+	const PRICE_ID = 'price_1SwYhlPo9yD7PttV8cSl1Ez6';
+	const IS_SUBSCRIPTION = true;
+	let agencyCode = '';
+	let isCheckingOut = false;
+	let checkoutError = '';
+
+	$: agencyCode = $page.url.searchParams.get('agency_code') ?? '2139';
+
+	const startCheckout = async () => {
+		if (isCheckingOut) {
+			return;
+		}
+
+		checkoutError = '';
+		isCheckingOut = true;
+
+		if (!PRICE_ID) {
+			checkoutError = '現在お申込みの準備中です。しばらくしてからお試しください。';
+			isCheckingOut = false;
+			return;
+		}
+
+		try {
+			const response = await CheckoutService.checkouForPaymanage(
+				PRICE_ID,
+				agencyCode,
+				IS_SUBSCRIPTION
+			);
+			const payload = response?.data ?? response?.response?.data ?? response;
+			const url =
+				(typeof payload === 'string' ? payload : null) ??
+				payload?.checkoutUrl ??
+				payload?.paymentUrl ??
+				payload?.url ??
+				payload?.data?.checkoutUrl ??
+				payload?.data?.paymentUrl ??
+				payload?.data?.url;
+
+			if (url) {
+				window.location.href = url;
+				return;
+			}
+			checkoutError = 'チェックアウトURLの取得に失敗しました。時間をおいてお試しください。';
+		} catch {
+			checkoutError = 'チェックアウトに失敗しました。時間をおいてお試しください。';
+		} finally {
+			isCheckingOut = false;
+		}
+	};
 </script>
 
 <!-- 背景 -->
 <div class="w-full bg-basebg text-ink">
 	<!-- コンテンツ幅固定 -->
-	<main class="mx-auto max-w-phone px-4 pb-20">
+	<main class="mx-auto max-w-phone px-4 pb-20 pt-20">
+
+		<!-- 固定ヘッダー -->
+		<header class="fixed top-0 left-0 right-0 z-20">
+			<div class="bg-white/80 backdrop-blur border-b border-gray-200 shadow-sm">
+				<div class="mx-auto max-w-phone px-4 py-4">
+				<div class="flex items-center justify-between gap-3">
+					<p class="text-sm font-semibold tracking-wide">
+						ペット介護.com
+					</p>
+					<button
+						type="button"
+						on:click={startCheckout}
+						disabled={isCheckingOut}
+						class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-ink text-white text-xs font-semibold tracking-wide shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+						aria-busy={isCheckingOut}
+					>
+						{#if isCheckingOut}
+							<span class="inline-block h-4 w-4 rounded-full border-2 border-white/60 border-t-white animate-spin" />
+							処理中
+						{:else}
+							今すぐお申込み
+						{/if}
+					</button>
+				</div>
+				{#if checkoutError}
+					<p class="text-xs text-red-600 mt-2">
+						{checkoutError}
+					</p>
+				{/if}
+				</div>
+			</div>
+		</header>
 
 		<!-- HERO / 画像1 -->
 		<section class="pt-10 text-center">
 			<img
 				src={`${base}/images/cat-main.png`}
-				alt="シニアペットケア"
+				alt="ペット介護"
 				class="mx-auto rounded-2xl mb-8"
 			/>
 
 			<h1 class="text-2xl font-semibold mb-6">
-				シニアペットのケアが変わります
+				ペット介護が変わります
 			</h1>
 
 			<p class="leading-relaxed mb-6">
@@ -203,7 +287,46 @@
 			<p class="text-sm">
 				レンタル／ご自宅トライアルも可能です。
 			</p>
+			<button
+				type="button"
+				on:click={startCheckout}
+				disabled={isCheckingOut}
+				class="inline-flex items-center justify-center gap-2 mt-6 px-6 py-3 rounded-full bg-ink text-white text-sm font-semibold tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
+				aria-busy={isCheckingOut}
+			>
+				{#if isCheckingOut}
+					<span class="inline-block h-4 w-4 rounded-full border-2 border-white/60 border-t-white animate-spin" />
+					処理中
+				{:else}
+					今すぐお申込み
+				{/if}
+			</button>
+			{#if checkoutError}
+				<p class="text-xs text-red-600 mt-3">
+					{checkoutError}
+				</p>
+			{/if}
 		</section>
+
+		<!-- フッター -->
+		<footer class="text-sm text-gray-600">
+			<div class="bg-white/70 border border-gray-200 rounded-3xl px-6 py-12 mt-4">
+				<div class="flex flex-wrap items-center justify-center gap-5 mb-6 text-sm">
+				<a href={`${base}/terms`} class="hover:underline">利用規約</a>
+				<a href={`${base}/tokusho`} class="hover:underline">特定商取引法に基づく表記</a>
+				<a href={`${base}/privacy`} class="hover:underline">プライバシーポリシー</a>
+			</div>
+				<p class="text-center text-ink/80 font-semibold">
+					株式会社ファセテラピー
+				</p>
+				<p class="text-center">
+					〒150-0002 東京都渋谷区渋谷1丁目15-15-1010
+				</p>
+				<p class="text-center text-xs text-gray-500 mt-4">
+					お問い合わせはメールにて承っております。
+				</p>
+			</div>
+		</footer>
 
 	</main>
 </div>
