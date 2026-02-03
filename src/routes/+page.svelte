@@ -1,6 +1,6 @@
 <script>
 	import { base } from '$app/paths';
-	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	import CheckoutService from '$lib/infras/checkoutService';
 
 	const PRICE_ID = 'price_1SwYhlPo9yD7PttV8cSl1Ez6';
@@ -9,7 +9,10 @@
 	let isCheckingOut = false;
 	let checkoutError = '';
 
-	$: agencyCode = $page.url.searchParams.get('agency_code') ?? '2139';
+	onMount(() => {
+		const params = new URLSearchParams(window.location.search);
+		agencyCode = params.get('agency_code') ?? '2139';
+	});
 
 	const startCheckout = async () => {
 		if (isCheckingOut) {
