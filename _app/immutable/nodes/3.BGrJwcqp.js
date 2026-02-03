@@ -1,0 +1,17 @@
+import{s as o,n as a}from"../chunks/DhPxUMA7.js";import{S as p,i as c,d as i,a as m,b,c as d,g as x,e as h}from"../chunks/DfgF3JgI.js";import{b as s}from"../chunks/CNGiYDn3.js";function f(n){let e,r=`<main class="mx-auto max-w-phone px-4 pb-20 pt-10"><header class="mb-8"><a href="${`${s}/`}" class="text-sm text-gray-600 hover:underline">トップへ戻る</a> <h1 class="text-2xl font-semibold mt-4">プライバシーポリシー</h1></header> <section class="text-sm leading-relaxed"><p class="mb-4">株式会社ファセテラピー（以下「当社」といいます）は、当社が提供する本ウェブサイトおよび関連サービス（以下「本サービス」といいます）におけるユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。</p> <p class="mb-4">第1条（個人情報の定義）<br/>
+				「個人情報」とは、個人情報保護法にいう「生存する個人に関する情報」であり、氏名・住所・電話番号・メールアドレス・生年月日など、特定の個人を識別できる情報を指します。</p> <p class="mb-4">第2条（個人情報の収集方法）<br/>
+				当社は、ユーザーが利用登録を行う際、または本サービスを利用する過程において、以下の情報を取得することがあります。<br/>
+				氏名／住所／電話番号／メールアドレス／生年月日・性別／決済情報（クレジットカード情報等は決済代行会社が管理します）／本人確認書類（必要な場合）／問い合わせ内容・利用履歴・アクセスログ</p> <p class="mb-4">第3条（個人情報の利用目的）<br/>
+				当社は、取得した個人情報を以下の目的で利用します。<br/>
+				本サービスの提供・運営／本人確認、登録情報の確認／商品の発送、アフターサポートの提供／料金請求、決済処理、支払確認／お問い合わせへの対応／メンテナンス、重要なお知らせ、更新情報の通知／サービス改善のための分析／不正利用・トラブル防止のための調査／キャンペーンや新サービスの案内（ユーザーが希望する場合）</p> <p class="mb-4">第4条（個人情報の第三者提供）<br/>
+				当社は、次のいずれかに該当する場合を除き、第三者に個人情報を提供することはありません。<br/>
+				ユーザー本人の同意がある場合／法令に基づき開示が必要な場合／決済処理のため決済代行会社へ情報を提供する場合／サービス運営上必要な業務委託先へ提供する場合／人の生命・身体・財産を保護するために必要で、本人の同意を得ることが困難な場合</p> <p class="mb-4">第5条（個人情報の安全管理）<br/>
+				当社は、個人情報を安全に管理するため、適切な管理体制のもと情報の漏洩・紛失・改ざん等を防止するための措置を講じます。</p> <p class="mb-4">第6条（個人情報の開示・訂正・削除）<br/>
+				ユーザーは、当社が保有する自身の個人情報について、以下の請求を行うことができます。<br/>
+				開示請求／訂正・追加・削除の請求／利用停止・第三者提供停止の請求<br/>
+				請求を行う際は、当社が指定する手続きに従っていただく必要があります。</p> <p class="mb-4">第7条（Cookieおよびアクセス解析）<br/>
+				当社は、サービス改善のためにCookieおよびアクセス解析ツール（Google Analytics等）を使用する場合があります。これにより取得されるデータは個人を特定しません。</p> <p class="mb-4">第8条（外部サービスへの委託）<br/>
+				システム運用・配送・決済処理など、本サービスの提供に必要な範囲内で業務を外部に委託する場合があります。委託先にも個人情報保護を徹底するよう適切に管理します。</p> <p class="mb-4">第9条（プライバシーポリシーの変更）<br/>
+				当社は、法令改正やサービス内容の変更に応じて、本ポリシーを改定することがあります。改定後の内容は、本ウェブサイトに掲載された時点で効力を生じます。</p> <p>第10条（お問い合わせ窓口）<br/>
+				個人情報に関するお問い合わせ・開示請求は、以下までご連絡ください。<br/>
+				株式会社ファセテラピー／住所：〒150-0002 東京都渋谷区渋谷1丁目15-15-1010／メール: 5555rieko@gmail.com</p></section> <footer class="text-sm text-gray-600 mt-16"><div class="bg-white/70 border border-gray-200 rounded-3xl px-6 py-12"><div class="flex flex-wrap items-center justify-center gap-5 mb-6 text-sm"><a href="${`${s}/terms`}" class="hover:underline">利用規約</a> <a href="${`${s}/tokusho`}" class="hover:underline">特定商取引法に基づく表記</a> <a href="${`${s}/privacy`}" class="hover:underline">プライバシーポリシー</a></div> <p class="text-center text-ink/80 font-semibold">株式会社ファセテラピー</p> <p class="text-center">〒150-0002 東京都渋谷区渋谷1丁目15-15-1010</p> <p class="text-center text-xs text-gray-500 mt-4">お問い合わせはメールにて承っております。</p></div></footer></main>`;return{c(){e=h("div"),e.innerHTML=r,this.h()},l(t){e=d(t,"DIV",{class:!0,"data-svelte-h":!0}),x(e)!=="svelte-1vmsh7n"&&(e.innerHTML=r),this.h()},h(){b(e,"class","w-full bg-basebg text-ink")},m(t,l){m(t,e,l)},p:a,i:a,o:a,d(t){t&&i(e)}}}function u(n,e,r){return[!0]}class y extends p{constructor(e){super(),c(this,e,u,f,o,{prerender:0})}get prerender(){return this.$$.ctx[0]}}export{y as component};
