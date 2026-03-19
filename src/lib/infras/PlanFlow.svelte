@@ -114,7 +114,7 @@
 					<br />
 					第1条（本サービスの内容）<br />
 					1. 本サービスは、お客様が当社指定のケア機器を月額利用料を支払うことにより一定期間レンタルできるサービスです。<br />
-					2. ベーシックプランの月額利用料は1台あたり3,300円（税込）とし、犬用クッションまたは猫用クッションは各2,200円（税込）の追加オプションとして申し込めます。<br />
+					2. ベーシックプランの月額利用料は1台あたり3,300円（税込）とし、顔マスクセットは月額2,200円（税込）の追加オプションとして申し込めます。12ヶ月のお支払い完了後は、お客様へそのままプレゼントし、13ヶ月目以降も追加料金なしでご利用いただけます。<br />
 					<br />
 					第2条（契約の成立および支払い方法）<br />
 					1. お客様が当社指定の申込手続を完了し、当社が承諾した時点で契約が成立します。<br />
@@ -165,7 +165,7 @@
 			<div class="mb-4 overflow-hidden bg-transparent sm:mb-6">
 				<div class="rounded-[18px] border border-[#e4d9c8]/70 bg-[#f7f3ed] p-4 sm:rounded-[20px] sm:p-5">
 					<p class="mt-2 text-sm leading-6 text-[#5f4b53]">
-						内容をご確認のうえ、必要に応じて犬用・猫用クッションを追加できます。
+						内容をご確認のうえ、必要に応じて顔マスクセットを追加できます。
 					</p>
 				</div>
 				<div class="bg-transparent p-0 pt-4">
@@ -318,8 +318,8 @@
 							</div>
 						{/if}
 
-								<div class="rounded-[14px] border border-dashed border-[#d8cdbb] p-3 text-xs leading-6 text-[#7a626c] sm:rounded-[18px] sm:p-4">
-							ベーシックプランは月額3,300円です。犬用クッション、猫用クッションは各月額2,200円で追加できます。
+						<div class="rounded-[14px] border border-dashed border-[#d8cdbb] p-3 text-xs leading-6 text-[#7a626c] sm:rounded-[18px] sm:p-4">
+							顔マスクセットは月額2,200円で追加できるオプションです。12ヶ月のお支払い完了後はそのままプレゼントとなり、13ヶ月目以降も追加料金なしでご利用いただけます。
 						</div>
 
 						{#if checkoutError}
