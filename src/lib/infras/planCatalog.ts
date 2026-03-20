@@ -12,7 +12,7 @@ export const planCatalog = {
 		id: 'basic-plan',
 		name: 'ベーシックプラン',
 		price: 3300,
-		priceLabel: '月額 3,300円から',
+		priceLabel: '月額 3,300円',
 		description:
 			'ご自宅で続けやすい基本プランです。まずは本体レンタルから始めたい方向けのベーシックな契約内容です。',
 		image: {
@@ -30,7 +30,7 @@ export const planCatalog = {
 			name: '犬用クッション',
 			price: 2200,
 			priceLabel: '月額 2,200円',
-			description: '振動機を中に入れて使用することができる犬用デザインのクッション。',
+			description: '月額2,200円。12ヶ月のお支払い後はプレゼント、13ヶ月目以降の費用はかかりません。',
 			image: {
 				src: '/images/products/option_dog1.JPG',
 				alt: '犬用クッション画像'
@@ -45,7 +45,7 @@ export const planCatalog = {
 			name: '猫用クッション',
 			price: 2200,
 			priceLabel: '月額 2,200円',
-			description: '振動機を中に入れて使用することができる猫用デザインのクッション。',
+			description: '月額2,200円。12ヶ月のお支払い後はプレゼント、13ヶ月目以降の費用はかかりません。',
 			image: {
 				src: '/images/products/option_cat1.png',
 				alt: '猫用クッション画像'

@@ -146,7 +146,7 @@
 
 			<div class="mt-8 grid gap-4 text-left">
 				<div class="rounded-[22px] border border-[#d6d4cf] bg-[linear-gradient(180deg,#f7f7f5,#ecebe8)] p-4">
-					<div class="mb-3 text-xs font-semibold tracking-[0.18em] text-[#8a6c57]">OPTION MASK</div>
+					<div class="mb-3 text-xs font-semibold tracking-[0.18em] text-[#8a6c57]">OPTION CUSHION</div>
 					<div class="grid gap-4 md:grid-cols-2">
 						<div class="overflow-hidden rounded-[16px] bg-black/5">
 							<!-- svelte-ignore a11y-media-has-caption -->
@@ -168,7 +168,7 @@
 						</div>
 					</div>
 					<p class="mt-3 text-xs leading-6 text-[#7b766d]">
-						顔マスクセットは、月額2,200円で追加できるオプションです。12ヶ月のお支払い完了後はそのままプレゼントとなり、13ヶ月目以降も追加料金なしでご利用いただけます。
+						犬用・猫用クッションは各月額2,200円。12ヶ月のお支払い後はプレゼント、13ヶ月目以降の費用はかかりません。
 					</p>
 				</div>
 			</div>
@@ -197,7 +197,7 @@
 				<p class="text-xs font-semibold tracking-[0.24em] text-[#8a6c57]">PLANS</p>
 				<h2 class="mt-3 text-2xl font-semibold text-[#2f2a24]">料金とお申込み内容</h2>
 				<p class="mt-3 text-sm leading-7 text-[#5b5447]">
-					ベーシックプランに、顔マスクセットをオプションとして追加いただけます。
+					ベーシックプランに、犬用・猫用クッションをオプション追加できます。
 				</p>
 			</div>
 
