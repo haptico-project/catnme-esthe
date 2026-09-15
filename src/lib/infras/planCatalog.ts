@@ -22,40 +22,8 @@ export const planCatalog = {
 		orderProduct: {
 			productId: 'price_1TBxhcPo9yD7PttVVCoH9hlm',
 			quantity: 1
-		},
-	},
-	options: [
-		{
-			id: 'dog-cushion',
-			name: '犬用クッション',
-			price: 2200,
-			priceLabel: '月額 2,200円',
-			description: '月額2,200円。12ヶ月のお支払い後はプレゼント、13ヶ月目以降の費用はかかりません。',
-			image: {
-				src: '/images/products/option_dog1.JPG',
-				alt: '犬用クッション画像'
-			},
-			orderProduct: {
-				productId: 'price_1TBxs1Po9yD7PttVq8G2eNys',
-				quantity: 1
-			}
-		},
-		{
-			id: 'cat-cushion',
-			name: '猫用クッション',
-			price: 2200,
-			priceLabel: '月額 2,200円',
-			description: '月額2,200円。12ヶ月のお支払い後はプレゼント、13ヶ月目以降の費用はかかりません。',
-			image: {
-				src: '/images/products/option_cat1.png',
-				alt: '猫用クッション画像'
-			},
-			orderProduct: {
-				productId: 'price_1TBxvHPo9yD7PttVil9kNnjG',
-				quantity: 1
-			}
 		}
-	]
+	}
 } as const;
 
 export const formatYen = (amount: number) =>
@@ -65,14 +33,6 @@ export const formatYen = (amount: number) =>
 		maximumFractionDigits: 0
 	}).format(amount);
 
-export const buildSubscriptionProducts = (selectedOptionIds: string[]): CheckoutProduct[] => {
-	const products: CheckoutProduct[] = [planCatalog.basePlan.orderProduct];
-
-	for (const option of planCatalog.options) {
-		if (selectedOptionIds.includes(option.id)) {
-			products.push(option.orderProduct);
-		}
-	}
-
-	return products;
-};
+export const buildSubscriptionProducts = (): CheckoutProduct[] => [
+	planCatalog.basePlan.orderProduct
+];
